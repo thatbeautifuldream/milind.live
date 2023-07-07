@@ -1,0 +1,26 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Milind Mishra <contact@milind.live>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.5.1",
+    "gray-matter": "^4.0.2",
+    "next": "12.1.6",
+    "nextra": "2.0.0-alpha.56",
+    "nextra-theme-blog": "2.0.0-alpha.55",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "rss": "^1.2.2"
+  },
+  "prettier": {
+    "semi": false,
+    "proseWrap": "never"
+  }
+}
