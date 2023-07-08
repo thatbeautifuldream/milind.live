@@ -14,6 +14,10 @@ export default function GithubCalenderComponent() {
           light: ["hsl(0, 0%, 92%)", "white"],
           dark: ["hsl(0, 0%, 22%)", "white"],
         }}
+        style={{
+          padding: "0px",
+          marginBottom: "20px",
+        }}
         renderBlock={(block, activity) =>
           React.cloneElement(block, {
             "data-tooltip-id": "react-tooltip",
