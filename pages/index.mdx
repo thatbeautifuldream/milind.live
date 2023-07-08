@@ -6,7 +6,11 @@ description: Milind Mishra is a designer and developer.
 image: https://milind.live/og/about.png
 ---
 
+import React from "react"
 import Head from "next/head"
+import GitHubCalendar from "react-github-calendar"
+import { Tooltip as ReactTooltip } from "react-tooltip"
+import "react-tooltip/dist/react-tooltip.css"
 
 <Head>
   <title>Milind Mishra</title>
@@ -15,6 +19,17 @@ import Head from "next/head"
 # Milind Mishra
 
 Hi! I am a Software Engineer based in [**Hsinchu, Taiwan**](https://g.co/kgs/j6odGY). I also spend lots of time at home in [**Dhanbad, India**](https://g.co/kgs/xSZ839). Currently handling **Frontend** and **DevOps** for [**Locus Connect**](https://locusconnect.com). Have previously interned as a **UX/UI Designer** at [**iNeuron.ai**](https://ineuron.ai). I enjoy finding and solving problems.
+
+<GitHubCalendar
+  username="thatbeautifuldream"
+  renderBlock={(block, activity) =>
+    React.cloneElement(block, {
+      "data-tooltip-id": "react-tooltip",
+      "data-tooltip-html": `${activity.count} commits on ${activity.date}`,
+    })
+  }
+/>
+<ReactTooltip id="react-tooltip" />
 
 <details><summary children="Resume"/>
 

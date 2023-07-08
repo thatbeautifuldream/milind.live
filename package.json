@@ -18,6 +18,8 @@
     "nextra-theme-blog": "2.0.0-alpha.55",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-github-calendar": "^4.0.1",
+    "react-tooltip": "^5.18.0",
     "rss": "^1.2.2"
   },
   "prettier": {
