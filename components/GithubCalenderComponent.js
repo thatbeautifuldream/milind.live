@@ -10,10 +10,6 @@ export default function GithubCalenderComponent() {
         username="thatbeautifuldream"
         hideColorLegend="true"
         showWeekdayLabels="true"
-        theme={{
-          light: ["hsl(0, 0%, 92%)", "white"],
-          dark: ["hsl(0, 0%, 22%)", "white"],
-        }}
         style={{
           padding: "0px",
           marginBottom: "20px",
