@@ -1,0 +1,44 @@
+{
+  "trivia": [
+    {
+      "question": "What does HTTP 404 error indicate?",
+      "answer": "The requested resource could not be found on the server."
+    },
+    {
+      "question": "When was the term '404' first used to describe a missing web page?",
+      "answer": "In 1992."
+    },
+    {
+      "question": "What is the origin of the term '404'?",
+      "answer": "It comes from a room number at CERN where the World Wide Web was developed."
+    },
+    {
+      "question": "What is a common default message for a 404 error?",
+      "answer": "404 Not Found"
+    },
+    {
+      "question": "What is the purpose of a custom 404 error page?",
+      "answer": "To provide users with more helpful information and navigation options when they encounter a 404 error."
+    },
+    {
+      "question": "What can webmasters and developers monitor using 404 error logs?",
+      "answer": "Broken links and improve the user experience."
+    },
+    {
+      "question": "How can web crawlers encounter 404 errors?",
+      "answer": "When they try to access web pages that have been moved or deleted."
+    },
+    {
+      "question": "What is the HTTP status code for a 404 error?",
+      "answer": "404"
+    },
+    {
+      "question": "How can creative 404 error pages enhance the user experience?",
+      "answer": "By entertaining users and providing a positive experience even when encountering an error."
+    },
+    {
+      "question": "What is the significance of the term '404' in the web development community?",
+      "answer": "It has become synonymous with the concept of a missing or unavailable web page."
+    }
+  ]
+}

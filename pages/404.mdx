@@ -1,7 +1,14 @@
+---
+title: 404, Page not Found
+description: The HTTP 404 error code indicates that the requested resource could not be found on the server.
+image: https://milind.live/og/404.png
+---
+
 import Image from "next/image"
+import NotFoundTrivia from "../components/NotFoundTrivia"
 import notFound from "../public/images/not_found.jpg"
 
-> Sorry, we could not find the page you were looking for.
+<NotFoundTrivia />
 
 <a href="/" title="Not Found" className="figure">
   <Image src={notFound} alt="Not Found" placeholder="blur" />
