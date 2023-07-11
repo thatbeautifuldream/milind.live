@@ -19,7 +19,15 @@ const Memes = () => {
         href={currentMeme ? currentMeme.postLink : "#"}
         target="_blank"
       >
-        {currentMeme && <img src={currentMeme.url} alt="Enjoy Memes" />}
+        {currentMeme && (
+          <img
+            src={currentMeme.url}
+            alt="Enjoy Memes"
+            style={{
+              margin: "0px",
+            }}
+          />
+        )}
       </a>
     </>
   )
