@@ -3,11 +3,11 @@ import GitHubCalendar from "react-github-calendar"
 import { Tooltip as ReactTooltip } from "react-tooltip"
 import "react-tooltip/dist/react-tooltip.css"
 
-export default function GithubCalenderComponent() {
+export default function GithubCalenderComponent({ username }) {
   return (
     <>
       <GitHubCalendar
-        username="thatbeautifuldream"
+        username={username}
         hideColorLegend="true"
         showWeekdayLabels="true"
         style={{
