@@ -6,18 +6,6 @@ import "react-tooltip/dist/react-tooltip.css"
 function LeetcodeStats({ username }) {
   const [data, setData] = useState(null)
 
-  const LeetcodeTooltip = ({ message, children }) => {
-    return (
-      <a
-        data-tooltip-id="my-tooltip"
-        data-tooltip-content={message || "Leetcode Stats"}
-        style={{ cursor: "pointer" }}
-      >
-        {children}
-      </a>
-    )
-  }
-
   useEffect(() => {
     axios
       .get(`https://leetcode-stats-api.herokuapp.com/${username}`)
@@ -39,59 +27,43 @@ function LeetcodeStats({ username }) {
         <tbody>
           <tr>
             <td>Total Solved / Total Questions</td>
-            <LeetcodeTooltip>
-              <td>
-                {data.totalSolved} / {data.totalQuestions}
-              </td>
-            </LeetcodeTooltip>
+            <td>
+              {data.totalSolved} / {data.totalQuestions}
+            </td>
           </tr>
           <tr>
             <td>Easy Solved / Total Easy</td>
-            <LeetcodeTooltip>
-              <td>
-                {data.easySolved} / {data.totalEasy}
-              </td>
-            </LeetcodeTooltip>
+            <td>
+              {data.easySolved} / {data.totalEasy}
+            </td>
           </tr>
           <tr>
             <td>Medium Solved / Total Medium</td>
-            <LeetcodeTooltip>
-              <td>
-                {data.mediumSolved} / {data.totalMedium}
-              </td>
-            </LeetcodeTooltip>
+            <td>
+              {data.mediumSolved} / {data.totalMedium}
+            </td>
           </tr>
           <tr>
             <td>Hard Solved / Total Hard</td>
-            <LeetcodeTooltip>
-              <td>
-                {data.hardSolved} / {data.totalHard}
-              </td>
-            </LeetcodeTooltip>
+            <td>
+              {data.hardSolved} / {data.totalHard}
+            </td>
           </tr>
           <tr>
             <td>Acceptance Rate</td>
-            <LeetcodeTooltip>
-              <td>{data.acceptanceRate}</td>
-            </LeetcodeTooltip>
+            <td>{data.acceptanceRate}</td>
           </tr>
           <tr>
             <td>Ranking</td>
-            <LeetcodeTooltip>
-              <td>{data.ranking}</td>
-            </LeetcodeTooltip>
+            <td>{data.ranking}</td>
           </tr>
           <tr>
             <td>Contribution Points</td>
-            <LeetcodeTooltip>
-              <td>{data.contributionPoints}</td>
-            </LeetcodeTooltip>
+            <td>{data.contributionPoints}</td>
           </tr>
           <tr>
             <td>Reputation</td>
-            <LeetcodeTooltip>
-              <td>{data.reputation}</td>
-            </LeetcodeTooltip>
+            <td>{data.reputation}</td>
           </tr>
         </tbody>
       </table>
