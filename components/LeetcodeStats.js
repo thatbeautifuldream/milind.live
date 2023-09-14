@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
-import { Tooltip } from "react-tooltip"
-import "react-tooltip/dist/react-tooltip.css"
+import BarLoader from "react-spinners/BarLoader"
 
 function LeetcodeStats({ username }) {
   const [data, setData] = useState(null)
@@ -18,11 +17,20 @@ function LeetcodeStats({ username }) {
       })
   }, [username])
 
-  if (!data) return <div>Loading...</div>
+  if (!data)
+    return (
+      <BarLoader
+        color="#006D32"
+        cssOverride={{
+          display: "flex",
+          justifyContent: "center",
+          margin: "auto",
+        }}
+      />
+    )
 
   return (
     <div>
-      <Tooltip id="my-tooltip" />
       <table>
         <tbody>
           <tr>
