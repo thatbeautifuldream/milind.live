@@ -265,3 +265,10 @@ figure,
 a[data-footnote-ref] {
   text-decoration: none;
 }
+
+sign,
+.sign {
+  display: flex;
+  margin-left: auto;
+  width: 30%;
+}
