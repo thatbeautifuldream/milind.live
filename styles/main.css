@@ -293,3 +293,11 @@ dates:hover,
 .dates:hover {
   background-color: #39d353;
 }
+
+footer-verified-stamp,
+.footer-verified-stamp {
+  display: flex;
+  margin-top: -3rem;
+  margin-left: auto;
+  width: 13%;
+}

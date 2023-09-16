@@ -1,3 +1,5 @@
+import Verified from "./components/Verified"
+
 const YEAR = new Date().getFullYear()
 
 export default {
@@ -49,6 +51,7 @@ export default {
       <a href="mailto:contact@milind.live" target="_blank">
         contact@milind.live
       </a>
+      <Verified />
       <small style={{ display: "block", marginTop: "8rem" }}>
         <abbr
           title="This site and all its content are licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
