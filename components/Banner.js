@@ -1,4 +1,5 @@
 import Image from "next/image"
+import SHBanner from "../public/images/banner/sh-banner.png"
 
 export default function Banner() {
   return (
@@ -8,10 +9,11 @@ export default function Banner() {
       }}
     >
       <Image
-        src="/images/banner/sh-banner.png"
+        src={SHBanner}
         alt="banner"
         width={2535}
         height={720}
+        placeholder="blur"
       />
     </div>
   )
