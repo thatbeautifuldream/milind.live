@@ -4,26 +4,8 @@ description: Page to share links.
 image: https://milind.live/og/links.png
 ---
 
+import Links from "../components/Links.js"
+
 # Links
-
-import Link from "next/link"
-import data from "../data/links.json"
-
-export function Links() {
-  return (
-    <div>
-      <h1>Links</h1>
-      <ul>
-        {data.links.map((link, index) => (
-          <li key={index}>
-            <Link href={link.url} target="_blank">
-              {link.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
 
 <Links />
