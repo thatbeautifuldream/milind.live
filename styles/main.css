@@ -297,7 +297,7 @@ dates:hover,
 footer-verified-stamp,
 .footer-verified-stamp {
   display: flex;
-  margin-top: -3rem;
+  margin-top: -2rem;
   margin-left: auto;
-  width: 13%;
+  width: 10%;
 }

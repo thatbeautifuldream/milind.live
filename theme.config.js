@@ -49,7 +49,7 @@ export default {
       </a>{" "}
       ·{" "}
       <a href="mailto:contact@milind.live" target="_blank">
-        contact@milind.live
+        Email
       </a>
       <Verified />
       <small style={{ display: "block", marginTop: "8rem" }}>
