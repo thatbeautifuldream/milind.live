@@ -9,6 +9,7 @@ image: https://milind.live/og/about.png
 import React from "react"
 import Head from "next/head"
 import Image from "next/image"
+import Banner from "../components/Banner.js"
 import GithubCalenderComponent from "../components/GithubCalenderComponent.js"
 import LeetcodeStats from "../components/LeetcodeStats.js"
 import Sign from "../components/Sign.js"
@@ -19,6 +20,8 @@ import data from "../data/resume.json"
 </Head>
 
 Hi! I am **Milind**, a **Software Engineer** based in [**Dhanbad, India**](https://g.co/kgs/xSZ839). Currently handling an Engineering team at [**Startup Hire**](https://turbo-startuphire.vercel.app). Previously handled **Frontend** and **DevOps** for [**Locus Connect**](https://locusconnect.com). I enjoy finding and solving engineering problems.
+
+<Banner />
 
 <GithubCalenderComponent username="thatbeautifuldream" />
 
@@ -41,7 +44,7 @@ Hi! I am **Milind**, a **Software Engineer** based in [**Dhanbad, India**](https
   <a href={exp.company_link} target="_blank" rel="noopener noreferrer">
     {exp.company}
   </a>
-  , {exp.dates}
+  , <div className="dates">{exp.dates}</div>
 </li>
 ))}
 

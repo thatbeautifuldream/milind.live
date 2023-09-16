@@ -272,3 +272,24 @@ sign,
   margin-left: auto;
   width: 30%;
 }
+
+dates,
+.dates {
+  background-color: #26a641;
+  border: none;
+  color: black;
+  padding: 1px 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+}
+
+dates:hover,
+.dates:hover {
+  background-color: #39d353;
+}
