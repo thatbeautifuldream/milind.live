@@ -4,7 +4,6 @@ import data from "../data/links.json"
 export default function Links() {
   return (
     <div>
-      <h1>Links</h1>
       <ul>
         {data.links.map((link, index) => (
           <li key={index}>
