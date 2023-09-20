@@ -52,7 +52,15 @@ function HackerNews() {
               <a href={story.url} target="_blank" rel="noopener noreferrer">
                 {story.title}
               </a>{" "}
-              by {story.by} on {new Date(story.time * 1000).toLocaleString()}
+              by {story.by}
+              <span
+                className="dates"
+                style={{
+                  float: "right",
+                }}
+              >
+                {new Date(story.time * 1000).toLocaleString()}
+              </span>
             </li>
           ))}
         </ol>
