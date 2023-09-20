@@ -22,6 +22,7 @@ function HackerNews() {
           return await storyResponse.json()
         })
         const newsData = await Promise.all(newsPromises)
+        console.log("Hacker News data:", newsData)
         setNews(newsData)
         setIsLoading(false) // Set loading to false after data is fetched
       } catch (error) {
@@ -49,9 +50,9 @@ function HackerNews() {
           {news.map((story, index) => (
             <li key={index} value={story.score}>
               <a href={story.url} target="_blank" rel="noopener noreferrer">
-                {story.title}{" "}
-              </a>
-              by {story.by}
+                {story.title}
+              </a>{" "}
+              by {story.by} on {new Date(story.time * 1000).toLocaleString()}
             </li>
           ))}
         </ol>
