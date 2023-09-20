@@ -28,7 +28,6 @@ function LeetcodeStats({ username }) {
         }}
       />
     )
-
   return (
     <div>
       <table>
