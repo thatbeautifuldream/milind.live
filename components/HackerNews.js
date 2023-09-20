@@ -49,8 +49,9 @@ function HackerNews() {
           {news.map((story, index) => (
             <li key={index} value={story.score}>
               <a href={story.url} target="_blank" rel="noopener noreferrer">
-                {story.title} by {story.by}
+                {story.title}{" "}
               </a>
+              by {story.by}
             </li>
           ))}
         </ol>
