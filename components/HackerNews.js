@@ -13,17 +13,14 @@ function HackerNews() {
           "https://hacker-news.firebaseio.com/v0/topstories.json"
         )
         const storyIds = await response.json()
-
         // Fetch details of the top 10 stories (you can change this number)
         const topStories = storyIds.slice(0, 10) // Change the number to get more or fewer stories
-
         const newsPromises = topStories.map(async (storyId) => {
           const storyResponse = await fetch(
             `https://hacker-news.firebaseio.com/v0/item/${storyId}.json`
           )
           return await storyResponse.json()
         })
-
         const newsData = await Promise.all(newsPromises)
         setNews(newsData)
         setIsLoading(false) // Set loading to false after data is fetched
@@ -32,7 +29,6 @@ function HackerNews() {
         setIsLoading(false) // Set loading to false in case of an error
       }
     }
-
     fetchNews()
   }, [])
 
