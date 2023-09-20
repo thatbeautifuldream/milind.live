@@ -52,7 +52,7 @@ function HackerJobs() {
               <a href={job.url} target="_blank" rel="noopener noreferrer">
                 {job.title}
               </a>{" "}
-              by {job.by}
+              by <code>{job.by}</code>
               <span
                 className="dates"
                 style={{
