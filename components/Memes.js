@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { HashLoader } from "react-spinners"
+import { BarLoader } from "react-spinners"
 
 const Memes = () => {
   const [spinner, setSpinner] = useState(false)
@@ -20,39 +20,58 @@ const Memes = () => {
     fetchMeme()
   }, [])
 
-  if (spinner) {
-    return (
-      <div
+  return (
+    <div>
+      <button
+        className="button"
+        onClick={fetchMeme}
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          minHeight: "50vh",
+          marginBottom: "1rem",
         }}
       >
-        <HashLoader color="#39D353" />
-      </div>
-    )
-  }
-  return (
-    <>
-      <a
-        title="Enjoy Memes"
-        className="figure"
-        href={currentMeme ? currentMeme.postLink : "#"}
-        target="_blank"
-      >
-        {currentMeme && (
-          <img
-            src={currentMeme.url}
-            alt="Enjoy Memes"
-            style={{
-              margin: "0px",
-            }}
-          />
-        )}
-      </a>
-    </>
+        <code>fetchMeme()</code>
+      </button>
+      {spinner ? (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <BarLoader color="#39D353" />
+        </div>
+      ) : (
+        <a
+          title="Enjoy Memes"
+          className="figure"
+          href={currentMeme ? currentMeme.postLink : "#"}
+          target="_blank"
+        >
+          {currentMeme && (
+            <img
+              src={currentMeme.url}
+              alt="Enjoy Memes"
+              style={{
+                margin: "0px",
+              }}
+            />
+          )}
+        </a>
+      )}
+      <footer>
+        <p>
+          Memes from{" "}
+          <a
+            href="https://news.ycombinator.com/jobs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Reddit
+          </a>
+        </p>
+      </footer>
+    </div>
   )
 }
 

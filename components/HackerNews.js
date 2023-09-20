@@ -65,6 +65,18 @@ function HackerNews() {
           ))}
         </ol>
       )}
+      <footer>
+        <p>
+          Data from{" "}
+          <a
+            href="https://news.ycombinator.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hacker News
+          </a>
+        </p>
+      </footer>
     </div>
   )
 }
