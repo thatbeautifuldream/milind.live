@@ -40,12 +40,12 @@ export default {
         LinkedIn
       </a>{" "}
       ·{" "}
-      <a href="https://instagram.com/thatbeautifuldream" target="_blank">
-        Instagram
-      </a>{" "}
-      ·{" "}
       <a href="https://github.com/thatbeautifuldream" target="_blank">
         GitHub
+      </a>{" "}
+      ·{" "}
+      <a href="https://instagram.com/thatbeautifuldream" target="_blank">
+        Instagram
       </a>{" "}
       ·{" "}
       <a href="https://twitter.com/milindstwt" target="_blank">
