@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import BarLoader from "react-spinners/BarLoader"
-import he from "he"
 
 function HackerNews() {
   const [news, setNews] = useState([])
