@@ -42,7 +42,10 @@ Hi! I am **Milind**, a **Software Engineer** based in [**Dhanbad, India**](https
 {data.experience.map((exp, index) => (
 
 <li key={index}>
-  <strong>{exp.position}</strong> at{" "}
+  <code>
+    <strong>{exp.position}</strong>
+  </code>{" "}
+  @{" "}
   <a href={exp.company_link} target="_blank" rel="noopener noreferrer">
     {exp.company}
   </a>
@@ -55,10 +58,9 @@ Hi! I am **Milind**, a **Software Engineer** based in [**Dhanbad, India**](https
 {data.honors.map((honor, index) => (
 
 <li key={index}>
-  <strong>{honor.title}</strong>
-  <a href={honor.project_link} target="_blank" rel="noopener noreferrer">
-    {honor.project}
-  </a>
+  <code>
+    <strong>{honor.title}</strong>
+  </code>
 </li>
 ))}
 
