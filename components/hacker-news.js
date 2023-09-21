@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import BarLoader from "react-spinners/BarLoader"
+import he from "he"
 
 function HackerNews() {
   const [news, setNews] = useState([])
@@ -58,7 +59,7 @@ function HackerNews() {
           return await commentResponse.json()
         })
         const commentsData = await Promise.all(commentPromises)
-
+        console.log("Comments:", commentsData)
         // Store comments in state
         setComments({ ...comments, [storyId]: commentsData })
         setIsLoadingComments({ ...isLoadingComments, [storyId]: false })
@@ -115,7 +116,20 @@ function HackerNews() {
                       {comments[story.id].map((comment, commentIndex) => (
                         <li key={commentIndex}>
                           <div>
-                            {comment.text} by <code>{comment.by}</code>
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html: comment.text,
+                              }}
+                            />
+                            <code>{comment.by}</code>
+                            <span
+                              className="dates"
+                              style={{
+                                float: "right",
+                              }}
+                            >
+                              {new Date(comment.time * 1000).toLocaleString()}
+                            </span>
                           </div>
                         </li>
                       ))}
