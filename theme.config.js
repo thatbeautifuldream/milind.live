@@ -1,4 +1,4 @@
-import Verified from "./components/Verified"
+import Verified from "./components/verified.js"
 
 const YEAR = new Date().getFullYear()
 
