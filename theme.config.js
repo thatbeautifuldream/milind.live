@@ -36,7 +36,11 @@ export default {
   footer: (
     <div>
       <hr />
-      <div className="footer-bar">
+      <div
+        style={{
+          display: "flex",
+        }}
+      >
         <div>
           <a href="https://www.linkedin.com/in/mishramilind/" target="_blank">
             LinkedIn
@@ -80,4 +84,7 @@ export default {
       </small>
     </div>
   ),
+  darkMode: true,
+  readMore: "Read More →",
+  postFooter: null,
 }
