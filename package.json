@@ -12,6 +12,7 @@
   "dependencies": {
     "@tremor/react": "^3.7.9",
     "@vercel/analytics": "^1.0.1",
+    "axios": "^1.5.0",
     "gray-matter": "^4.0.2",
     "next": "13.5.2",
     "nextra": "2.12.3",
