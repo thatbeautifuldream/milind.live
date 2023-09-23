@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import GitHubCalendar from "react-github-calendar"
 import { Tooltip as ReactTooltip } from "react-tooltip"
 import "react-tooltip/dist/react-tooltip.css"
