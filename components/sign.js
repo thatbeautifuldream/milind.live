@@ -5,7 +5,7 @@ import { useDarkMode } from "usehooks-ts"
 
 export default function Sign() {
   const { isDarkMode } = useDarkMode()
-  console.log("isDarkMode : ", isDarkMode)
+  // console.log("isDarkMode : ", isDarkMode)
   return (
     <>
       <a title="Milind's Sign" className="sign">
