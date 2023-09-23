@@ -1,5 +1,5 @@
 import Image from "next/image"
-import SHBanner from "../public/images/banner/sh-banner.png"
+import milindBanner from "../public/images/banner/milind-banner.png"
 
 export default function Banner() {
   return (
@@ -9,10 +9,10 @@ export default function Banner() {
       }}
     >
       <Image
-        src={SHBanner}
+        src={milindBanner}
         alt="banner"
-        width={2535}
-        height={720}
+        width={720}
+        height={300}
         placeholder="blur"
       />
     </div>
