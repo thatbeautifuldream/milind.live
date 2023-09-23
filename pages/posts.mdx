@@ -22,7 +22,7 @@ export function BlogIndex({ more = "Read more" }) {
       const H3 = "h3"
       return (
         <div key={page.route} className="mb-10">
-          <Link href={page.route}>
+          <Link legacyBehavior href={page.route}>
             <A
               style={{ color: "inherit", textDecoration: "none" }}
               className="post-link block font-semibold mt-8 text-2xl flex"

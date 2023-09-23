@@ -5,7 +5,7 @@ import Link from "next/link"
 export default function Verified() {
   return (
     <>
-      <Link href="/">
+      <Link legacyBehavior href="/">
         <a title="Mishra Verified" className="footer-verified-stamp">
           <Image
             src={MishraVerified}

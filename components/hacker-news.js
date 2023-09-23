@@ -93,7 +93,10 @@ function HackerNews() {
               <a href={story.url} target="_blank" rel="noopener noreferrer">
                 {story.title}
               </a>{" "}
-              by <code>{story.by}</code>
+              by{" "}
+              <code>
+                <strong>{story.by}</strong>
+              </code>
               <span
                 className="dates"
                 style={{
