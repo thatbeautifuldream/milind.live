@@ -294,12 +294,9 @@ dates:hover,
   background-color: #39d353;
 }
 
-footer-verified-stamp,
-.footer-verified-stamp {
+footer-bar,
+.footer-bar {
   display: flex;
-  margin-top: -2rem;
-  margin-left: auto;
-  width: 10%;
 }
 
 code {
