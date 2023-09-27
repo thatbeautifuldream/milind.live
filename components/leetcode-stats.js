@@ -1,6 +1,34 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import BarLoader from "react-spinners/BarLoader"
+import { DonutChart } from "@tremor/react"
+
+const cities = [
+  {
+    name: "New York",
+    sales: 9800,
+  },
+  {
+    name: "London",
+    sales: 4567,
+  },
+  {
+    name: "Hong Kong",
+    sales: 3908,
+  },
+  {
+    name: "San Francisco",
+    sales: 2400,
+  },
+  {
+    name: "Singapore",
+    sales: 1908,
+  },
+  {
+    name: "Zurich",
+    sales: 1398,
+  },
+]
 
 function LeetcodeStats({ username }) {
   const [data, setData] = useState(null)
@@ -15,7 +43,7 @@ function LeetcodeStats({ username }) {
       .catch((error) => {
         console.error("Error fetching data: ", error)
       })
-  }, [username])
+  }, [])
 
   if (!data)
     return (
@@ -29,7 +57,7 @@ function LeetcodeStats({ username }) {
       />
     )
   return (
-    <div>
+    <>
       <table>
         <tbody>
           <tr>
@@ -74,7 +102,7 @@ function LeetcodeStats({ username }) {
           </tr>
         </tbody>
       </table>
-    </div>
+    </>
   )
 }
 
