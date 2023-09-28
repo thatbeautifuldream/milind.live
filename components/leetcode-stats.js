@@ -1,7 +1,6 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import BarLoader from "react-spinners/BarLoader"
-import { DonutChart } from "@tremor/react"
 
 const cities = [
   {
