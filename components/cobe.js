@@ -33,7 +33,7 @@ export default function Cobe() {
       mapSamples: 16000,
       mapBrightness: 1.2,
       baseColor: [1, 1, 1],
-      markerColor: [251 / 255, 100 / 255, 21 / 255],
+      markerColor: [0, 1, 0],
       glowColor: [1.2, 1.2, 1.2],
       markers: [
         { location: [23.795653, 86.430386], size: 0.25 },
