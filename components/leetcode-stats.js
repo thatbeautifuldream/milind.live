@@ -2,49 +2,25 @@ import axios from "axios"
 import React, { useEffect, useState } from "react"
 import BarLoader from "react-spinners/BarLoader"
 
-const cities = [
-  {
-    name: "New York",
-    sales: 9800,
-  },
-  {
-    name: "London",
-    sales: 4567,
-  },
-  {
-    name: "Hong Kong",
-    sales: 3908,
-  },
-  {
-    name: "San Francisco",
-    sales: 2400,
-  },
-  {
-    name: "Singapore",
-    sales: 1908,
-  },
-  {
-    name: "Zurich",
-    sales: 1398,
-  },
-]
-
 function LeetcodeStats({ username }) {
   const [data, setData] = useState(null)
+  const [error, setError] = useState(null) // Introduce error state variable
 
   useEffect(() => {
     axios
       .get(`https://leetcode-stats-api.herokuapp.com/${username}`)
       .then((result) => {
-        console.log("Leetcode Stats : ", result.data)
+        console.log("Leetcode Stats: ", result.data)
         setData(result.data)
       })
       .catch((error) => {
         console.error("Error fetching data: ", error)
+        setError(error.message) // Set the error state when an error occurs
       })
   }, [])
 
-  if (!data)
+  // Render loading spinner while data is being fetched
+  if (!data && !error) {
     return (
       <BarLoader
         color="#006D32"
@@ -55,6 +31,13 @@ function LeetcodeStats({ username }) {
         }}
       />
     )
+  }
+
+  // Render error message if there's an error
+  if (error) {
+    return <p>Error: {error}</p>
+  }
+
   return (
     <>
       <table>

@@ -1,19 +1,25 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { BarLoader } from "react-spinners"
 
 const Memes = () => {
-  const [spinner, setSpinner] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
   const [currentMeme, setCurrentMeme] = useState(null)
 
   function fetchMeme() {
-    setSpinner(true)
+    setLoading(true)
+    setError(null)
+
     fetch("https://meme-api.com/gimme")
       .then((res) => res.json())
       .then((data) => {
         setCurrentMeme(data)
-        setSpinner(false)
+        setLoading(false)
       })
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        setError(err.message)
+        setLoading(false)
+      })
   }
 
   useEffect(() => {
@@ -29,9 +35,15 @@ const Memes = () => {
           marginBottom: "1rem",
         }}
       >
-        <code>fetchMeme()</code>
+        <code
+          style={{
+            color: "#006D32",
+          }}
+        >
+          fetchMeme()
+        </code>
       </button>
-      {spinner ? (
+      {loading && (
         <div
           style={{
             display: "flex",
@@ -39,31 +51,42 @@ const Memes = () => {
             alignItems: "center",
           }}
         >
-          <BarLoader color="#39D353" />
+          <BarLoader color="#006D32" />
         </div>
-      ) : (
+      )}
+      {error && (
+        <div>
+          <code
+            style={{
+              color: "#ff0000",
+            }}
+          >
+            Error: {error}
+          </code>
+        </div>
+      )}
+      {!loading && !error && currentMeme && (
         <a
           title="Enjoy Memes"
           className="figure"
-          href={currentMeme ? currentMeme.postLink : "#"}
+          href={currentMeme.postLink}
           target="_blank"
+          rel="noopener noreferrer"
         >
-          {currentMeme && (
-            <img
-              src={currentMeme.url}
-              alt="Enjoy Memes"
-              style={{
-                margin: "0px",
-              }}
-            />
-          )}
+          <img
+            src={currentMeme.url}
+            alt="Enjoy Memes"
+            style={{
+              margin: "0px",
+            }}
+          />
         </a>
       )}
       <footer>
         <p>
           Memes from{" "}
           <a
-            href="https://news.ycombinator.com/jobs"
+            href="https://meme-api.com/gimme"
             target="_blank"
             rel="noopener noreferrer"
           >

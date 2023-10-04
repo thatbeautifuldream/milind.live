@@ -93,16 +93,8 @@ function HackerNews() {
               <a href={story.url} target="_blank" rel="noopener noreferrer">
                 {story.title}
               </a>{" "}
-              by{" "}
-              <code>
-                <strong>{story.by}</strong>
-              </code>
-              <span
-                className="dates"
-                style={{
-                  float: "right",
-                }}
-              >
+              by <code>{story.by}</code>
+              <span className="dates">
                 {new Date(story.time * 1000).toLocaleString()}
               </span>
               {/* Fetch and display comments for this story */}
@@ -110,7 +102,7 @@ function HackerNews() {
                 <>
                   {" "}
                   <button onClick={() => hideComments(story.id)}>
-                    <code>Hide Comments</code>
+                    <code>[Hide Comments]</code>
                   </button>
                   {/* Display comments */}
                   {comments[story.id] && (
@@ -147,8 +139,8 @@ function HackerNews() {
                   >
                     <code>
                       {isLoadingComments[story.id]
-                        ? "Loading..."
-                        : "Show Comments"}
+                        ? "[Loading...]"
+                        : "[Show Comments]"}
                     </code>
                   </button>
                 </>

@@ -15,7 +15,13 @@ export default function CalEmbed() {
   }, [])
   return (
     <button data-cal-link="milind/30min" className="prose a">
-      Book me
+      <code
+        style={{
+          color: "#ff0000",
+        }}
+      >
+        =&gt;(BOOK ME)&lt;=
+      </code>
     </button>
   )
 }

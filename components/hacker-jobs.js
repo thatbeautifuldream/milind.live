@@ -4,6 +4,7 @@ import BarLoader from "react-spinners/BarLoader"
 function HackerJobs() {
   const [jobs, setJobs] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState(null) // Introduce error state variable
 
   useEffect(() => {
     // Fetch the latest job listings from the Hacker News API
@@ -27,6 +28,7 @@ function HackerJobs() {
         setIsLoading(false) // Set loading to false after data is fetched
       } catch (error) {
         console.error("Error fetching Hacker News jobs data:", error)
+        setError(error.message) // Set error state in case of an error
         setIsLoading(false) // Set loading to false in case of an error
       }
     }
@@ -35,7 +37,7 @@ function HackerJobs() {
 
   return (
     <div>
-      {/* Conditional rendering based on loading state */}
+      {/* Conditional rendering based on loading and error state */}
       {isLoading ? (
         <BarLoader
           color="#006D32"
@@ -45,14 +47,23 @@ function HackerJobs() {
             margin: "auto",
           }}
         />
+      ) : error ? (
+        <p>Error: {error}</p>
       ) : (
-        <ul>
+        <ul style={{ padding: "10px" }}>
           {jobs.map((job, index) => (
-            <li key={index}>
+            <li key={index} style={{ marginBottom: "1.25rem" }}>
               <a href={job.url} target="_blank" rel="noopener noreferrer">
                 {job.title}
               </a>{" "}
-              by <code>{job.by}</code>
+              by{" "}
+              <code
+                style={{
+                  color: "#006D32",
+                }}
+              >
+                {job.by}
+              </code>
               <span
                 className="dates"
                 style={{
