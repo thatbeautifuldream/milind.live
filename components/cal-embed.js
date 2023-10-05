@@ -14,14 +14,14 @@ export default function CalEmbed() {
     })()
   }, [])
   return (
-    <button data-cal-link="milind/30min" className="prose a">
-      <code
-        style={{
-          color: "#ff0000",
-        }}
-      >
-        =&gt;(BOOK ME)&lt;=
-      </code>
-    </button>
+    <code
+      style={{
+        color: "#ff0000",
+      }}
+    >
+      <button data-cal-link="milind/30min" className="prose a">
+        (Book Calender)
+      </button>
+    </code>
   )
 }
