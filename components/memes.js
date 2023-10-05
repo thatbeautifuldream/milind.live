@@ -68,15 +68,20 @@ const Memes = () => {
       )}
       <footer>
         <p>
-          <code>{currentMeme?.title}</code> from{" "}
-          <a
-            href={currentMeme?.postLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {currentMeme?.subreddit}
-          </a>{" "}
-          by {currentMeme?.author}
+          {loading && <code>Loading...</code>}
+          {error && <code>Error: {error}</code>}
+          {!loading && !error && currentMeme && (
+            <code>
+              [{currentMeme?.title}] by {currentMeme?.author} from{" "}
+              <a
+                href={currentMeme?.postLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                r/{currentMeme?.subreddit}
+              </a>
+            </code>
+          )}
         </p>
       </footer>
     </div>

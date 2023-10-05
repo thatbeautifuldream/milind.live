@@ -65,7 +65,7 @@ const PhotosComponent = () => {
       {photosData.map((photo, index) => (
         <div key={index}>
           <h3>{photo.title}</h3>
-          <p>{photo.description}</p>
+          <blockquote>{photo.description}</blockquote>
           <a title={photo.title} className="figure">
             <Image
               style={{
