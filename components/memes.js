@@ -14,6 +14,7 @@ const Memes = () => {
       .then((res) => res.json())
       .then((data) => {
         setCurrentMeme(data)
+        console.log(data)
         setLoading(false)
       })
       .catch((err) => {
@@ -28,21 +29,6 @@ const Memes = () => {
 
   return (
     <div>
-      <button
-        className="button"
-        onClick={fetchMeme}
-        style={{
-          marginBottom: "1rem",
-        }}
-      >
-        <code
-          style={{
-            color: "#006D32",
-          }}
-        >
-          fetchMeme()
-        </code>
-      </button>
       {loading && (
         <div
           style={{
@@ -66,32 +52,31 @@ const Memes = () => {
         </div>
       )}
       {!loading && !error && currentMeme && (
-        <a
-          title="Enjoy Memes"
+        <div
           className="figure"
-          href={currentMeme.postLink}
-          target="_blank"
           rel="noopener noreferrer"
+          onDoubleClick={fetchMeme}
         >
           <img
             src={currentMeme.url}
-            alt="Enjoy Memes"
+            alt="Double click to get a new meme"
             style={{
               margin: "0px",
             }}
           />
-        </a>
+        </div>
       )}
       <footer>
         <p>
-          Memes from{" "}
+          <code>{currentMeme?.title}</code> from{" "}
           <a
-            href="https://meme-api.com/gimme"
+            href={currentMeme?.postLink}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Reddit
-          </a>
+            {currentMeme?.subreddit}
+          </a>{" "}
+          by {currentMeme?.author}
         </p>
       </footer>
     </div>
