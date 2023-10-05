@@ -29,6 +29,21 @@ const Memes = () => {
 
   return (
     <div>
+      <p>
+        {loading && <code>Loading...</code>}
+        {!loading && !error && currentMeme && (
+          <code>
+            [{currentMeme?.title}] by {currentMeme?.author} from{" "}
+            <a
+              href={currentMeme?.postLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              r/{currentMeme?.subreddit}
+            </a>
+          </code>
+        )}
+      </p>
       {loading && (
         <div
           style={{
@@ -66,24 +81,6 @@ const Memes = () => {
           />
         </div>
       )}
-      <footer>
-        <p>
-          {loading && <code>Loading...</code>}
-          {error && <code>Error: {error}</code>}
-          {!loading && !error && currentMeme && (
-            <code>
-              [{currentMeme?.title}] by {currentMeme?.author} from{" "}
-              <a
-                href={currentMeme?.postLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                r/{currentMeme?.subreddit}
-              </a>
-            </code>
-          )}
-        </p>
-      </footer>
     </div>
   )
 }
