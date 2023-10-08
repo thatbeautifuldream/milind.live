@@ -15,6 +15,7 @@ import LeetcodeStats from "../components/leetcode-stats.js"
 import Sign from "../components/sign.js"
 import Cobe from "../components/cobe.js"
 import data from "../data/resume.json"
+import CalEmbed from "../components/cal-embed.js"
 
 <Head>
   <title>Milind Mishra</title>
@@ -22,7 +23,13 @@ import data from "../data/resume.json"
 
 # About
 
-Hi! I am **Milind**, a **Software Engineer** based in [**Dhanbad, India**](https://g.co/kgs/xSZ839). Currently building software for [**Startup Hire**](https://turbo-startuphire.vercel.app). Previously handled **Frontend** and **DevOps** for [**Locus Connect**](https://locusconnect.com).
+I'm Milind, a highly skilled Software Engineer hailing from Dhanbad, India. I bring a wealth of experience in crafting innovative solutions for startups, with a proven track record of success with respect to full-stack engineering. My expertise lies in building robust software that drives business growth.
+
+I am currently contributing my talents to Startup Hire, where I am passionately involved in creating cutting-edge software solutions. My previous role at Locus Connect equipped me with a deep understanding of frontend technologies and DevOps practices, allowing me to deliver exceptional results.
+
+I am enthusiastic about collaborating with forward-thinking companies and contributing my skills to projects that require technical excellence and creativity. If you're seeking a dedicated Software Engineer who can bring fresh perspectives and technical expertise to your team, I would love to connect.
+
+[**<CalEmbed message="Schedule a Meeting →" />**]()
 
 <details><summary children="Resume"/>
 
@@ -32,7 +39,7 @@ Hi! I am **Milind**, a **Software Engineer** based in [**Dhanbad, India**](https
   }
 `}</style>
 
-### Experience `(2+ years)`
+### Experience `(2+ years in Software Engineering)`
 
 {data.experience.map((exp, index) => (
 
@@ -61,7 +68,11 @@ Hi! I am **Milind**, a **Software Engineer** based in [**Dhanbad, India**](https
 
 </details>
 
-<details><summary children="More"/>
+<details
+  style={{
+    marginTop: "1rem",
+  }}
+><summary children="More"/>
 
 <style jsx>{`
   summary:not(:focus-visible):focus {

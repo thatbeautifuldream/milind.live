@@ -1,4 +1,3 @@
-import CalEmbed from "./components/cal-embed.js"
 import Verified from "./components/verified.js"
 
 const YEAR = new Date().getFullYear()
@@ -44,13 +43,12 @@ export default {
       >
         <div>
           <a href="https://www.linkedin.com/in/mishramilind/" target="_blank">
-            LinkedIn
+            LinkedIn ↗
           </a>{" "}
           ·{" "}
           <a href="https://github.com/thatbeautifuldream" target="_blank">
-            GitHub
+            GitHub ↗
           </a>{" "}
-          · <CalEmbed />
         </div>
         <Verified />
       </div>
