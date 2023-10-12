@@ -24,6 +24,8 @@
     "react-spinners": "^0.13.8",
     "react-spring": "^9.7.3",
     "react-tooltip": "^5.18.0",
+    "react-type-animation": "^3.2.0",
+    "react-youtube": "^10.1.0",
     "rss": "^1.2.2"
   },
   "resolutions": {
