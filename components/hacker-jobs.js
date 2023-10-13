@@ -56,14 +56,7 @@ function HackerJobs() {
               <a href={job.url} target="_blank" rel="noopener noreferrer">
                 {job.title}
               </a>{" "}
-              by{" "}
-              <code
-                style={{
-                  color: "#006D32",
-                }}
-              >
-                {job.by}
-              </code>
+              by <code>{job.by}</code>
               <span
                 className="dates"
                 style={{

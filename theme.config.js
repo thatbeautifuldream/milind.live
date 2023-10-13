@@ -75,4 +75,10 @@ export default {
   darkMode: true,
   readMore: "Read More →",
   postFooter: null,
+  // navs: [
+  //   {
+  //     url: "/links",
+  //     name: "Links",
+  //   },
+  // ],
 }

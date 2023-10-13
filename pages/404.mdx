@@ -1,15 +1,25 @@
 ---
-title: 404, Page not Found
+title: 404 Not Found
 description: The HTTP 404 error code indicates that the requested resource could not be found on the server.
 image: https://milind.live/og/404.png
 ---
 
-import Image from "next/image"
-import NotFoundTrivia from "../components/not-found-trivia.js"
-import notFound from "../public/images/not_found.jpg"
+import YouTube from "react-youtube"
 
-<NotFoundTrivia />
-
-<a href="/" title="Not Found" className="figure">
-  <Image src={notFound} alt="Not Found" placeholder="blur" />
-</a>
+<YouTube
+  videoId="dQw4w9WgXcQ"
+  opts={{
+    playerVars: {
+      autoplay: 1,
+      loop: 1,
+      mute: 1,
+      controls: 1,
+      showinfo: 0,
+      modestbranding: 1,
+      fs: 0,
+      cc_load_policy: 0,
+      iv_load_policy: 3,
+      autohide: 0,
+    },
+  }}
+/>
