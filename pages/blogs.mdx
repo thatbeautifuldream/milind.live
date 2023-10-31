@@ -5,33 +5,8 @@ description: Intresting things that I learn while solving problems. By Milind Mi
 image: https://milind.live/og/blogs.png
 ---
 
+import BlogPosts from "../components/hashnode-blogs.js"
+
 # Blogs
 
-Generally, I like to share the intresting things that I learn while solving problems.
-
-export function Insite({ title, url, description }) {
-  const H3 = "h3"
-  return (
-    <a className="insite-card block font-semibold" href={url} target="_blank">
-      <H3>{title}</H3>
-      <p>{description}</p>
-    </a>
-  )
-}
-
-### Lets check some intresting blogs!
-
-<div
-  style={{
-    display: "flex",
-    gap: "1rem",
-    flexWrap: "wrap",
-    marginTop: "1.25rem",
-  }}
->
-  <Insite
-    title="Hashnode Blogs"
-    url="https://blog.milind.live"
-    description="Full time job hinders quality content."
-  />
-</div>
+<BlogPosts />
