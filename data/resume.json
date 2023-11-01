@@ -1,19 +1,13 @@
 {
     "experience": [
       {
-        "position": "Full Stack Engineer",
+        "position": "Software Engineer",
         "company": "Startup Hire",
         "company_link": "https://turbo-startuphire.vercel.app",
         "dates": "July 2023 – present"
       },
       {
-        "position": "React Native App Developer",
-        "company": "FCA Lab",
-        "company_link": "https://iedge.lab.nycu.edu.tw/",
-        "dates": "June 2023 – Aug 2023"
-      },
-      {
-        "position": "Research Scholar",
+        "position": "Short Term Research Scholar",
         "company": "NYCU",
         "company_link": "https://en.nycu.edu.tw/",
         "dates": "Feb 2023 – Aug 2023"

@@ -12,7 +12,6 @@ import Banner from "../components/banner.js"
 import GithubCalenderComponent from "../components/github-calender-component.js"
 import LeetcodeStats from "../components/leetcode-stats.js"
 import Sign from "../components/sign.js"
-import Cobe from "../components/cobe.js"
 import data from "../data/resume.json"
 import CalEmbed from "../components/cal-embed.js"
 import TypeAnimationSequence from "../components/type-animation.js"
@@ -29,25 +28,9 @@ I'm Milind, a highly skilled Software Engineer hailing from Dhanbad, India. I br
 
 [**<CalEmbed message="Schedule a Meeting →" />**]()
 
-<details
-  style={{
-    marginBottom: "1rem",
-  }}
-><summary children="More"/>
-
-<style jsx>{`
-  summary:not(:focus-visible):focus {
-    outline: none;
-  }
-`}</style>
-
-<Cobe />
-
 <GithubCalenderComponent username="thatbeautifuldream" />
 
 <LeetcodeStats username="thatbeautifuldream" />
-
-</details>
 
 <details><summary children="Resume"/>
 
@@ -57,7 +40,7 @@ I'm Milind, a highly skilled Software Engineer hailing from Dhanbad, India. I br
   }
 `}</style>
 
-### Experience `(2+ years in Software Engineering)`
+### Experience `(2+ years)`
 
 {data.experience.map((exp, index) => (
 
