@@ -4,7 +4,7 @@ import BarLoader from "react-spinners/BarLoader"
 export function Insite({ title, coverImage, url, description }) {
   const H3 = "h3"
   return (
-    <a className="insite-card block font-semibold" href={url} target="_blank">
+    <a className="insite-card block font-semibold" href={url}>
       <img
         src={coverImage}
         alt={title}
@@ -31,6 +31,7 @@ const BlogPosts = () => {
               edges {
                 node {
                   title
+                  slug
                   brief 
                   url
                   coverImage {
@@ -58,6 +59,7 @@ const BlogPosts = () => {
         })
 
         const data = await response.json()
+        console.log({ data })
         setPosts(data.data.publication.posts.edges)
         setIsLoading(false) // Set loading to false after data is fetched
       } catch (error) {
@@ -92,7 +94,7 @@ const BlogPosts = () => {
           <Insite
             title={post.node.title}
             coverImage={post.node.coverImage.url}
-            url={post.node.url}
+            url={`/blogs/${post.node.slug}`}
             description={post.node.brief}
             key={index}
           />

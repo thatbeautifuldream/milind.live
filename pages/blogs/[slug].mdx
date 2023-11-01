@@ -1,0 +1,13 @@
+---
+title: Milind's Blogs
+description: Intresting things that I learn while solving problems. By Milind Mishra.
+image: https://milind.live/og/blogs.png
+---
+
+import { useRouter } from "next/router"
+import BlogPost from "../../components/hashnode-blog.js"
+
+export default function Page() {
+  const router = useRouter()
+  return <>{router.query.slug ? <BlogPost slug={router.query.slug} /> : null}</>
+}
