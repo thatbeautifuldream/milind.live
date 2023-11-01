@@ -2,6 +2,7 @@ import React from "react"
 import { useQuery } from "@tanstack/react-query"
 import Link from "next/link"
 import BarLoader from "react-spinners/BarLoader"
+import { BlogFooter } from "./hashnode-blogs"
 
 const fetchPost = async (slug) => {
   const query = `
@@ -84,6 +85,7 @@ const BlogPost = ({ slug }) => {
       />
       <h1>{post?.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: post?.content.html }} />
+      <BlogFooter />
     </div>
   )
 }

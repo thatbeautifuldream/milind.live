@@ -1,6 +1,16 @@
 import React from "react"
 import { useQuery } from "@tanstack/react-query"
+import Link from "next/link"
 import BarLoader from "react-spinners/BarLoader"
+
+export function BlogFooter() {
+  return (
+    <p>
+      Powered by{" "}
+      <Link href="https://hashnode.com/headless">Headless Hashnode</Link>
+    </p>
+  )
+}
 
 const fetchBlogPosts = async () => {
   const query = `
@@ -103,6 +113,8 @@ const BlogPosts = () => {
           key={index}
         />
       ))}
+
+      <BlogFooter />
     </div>
   )
 }
