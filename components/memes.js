@@ -1,37 +1,29 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
+import { useQuery } from "@tanstack/react-query"
+import axios from "axios"
 import { BarLoader } from "react-spinners"
 
+async function fetchMeme() {
+  const response = await axios.get("https://meme-api.com/gimme")
+  return response.data
+}
+
 const Memes = () => {
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-  const [currentMeme, setCurrentMeme] = useState(null)
-
-  function fetchMeme() {
-    setLoading(true)
-    setError(null)
-
-    fetch("https://meme-api.com/gimme")
-      .then((res) => res.json())
-      .then((data) => {
-        setCurrentMeme(data)
-        console.log(data)
-        setLoading(false)
-      })
-      .catch((err) => {
-        setError(err.message)
-        setLoading(false)
-      })
-  }
-
-  useEffect(() => {
-    fetchMeme()
-  }, [])
+  const {
+    data: currentMeme,
+    isLoading,
+    isError,
+    refetch,
+  } = useQuery({
+    queryKey: ["meme"],
+    queryFn: fetchMeme,
+  })
 
   return (
     <div>
       <p>
-        {loading && <code>Loading...</code>}
-        {!loading && !error && currentMeme && (
+        {isLoading && <code>Loading...</code>}
+        {!isLoading && !isError && currentMeme && (
           <code>
             [{currentMeme?.title}] by {currentMeme?.author} from{" "}
             <a
@@ -44,7 +36,7 @@ const Memes = () => {
           </code>
         )}
       </p>
-      {loading && (
+      {isLoading && (
         <div
           style={{
             display: "flex",
@@ -55,22 +47,22 @@ const Memes = () => {
           <BarLoader color="#006D32" />
         </div>
       )}
-      {error && (
+      {isError && (
         <div>
           <code
             style={{
               color: "#ff0000",
             }}
           >
-            Error: {error}
+            Error: {isError.message}
           </code>
         </div>
       )}
-      {!loading && !error && currentMeme && (
+      {!isLoading && !isError && currentMeme && (
         <div
           className="figure"
           rel="noopener noreferrer"
-          onDoubleClick={fetchMeme}
+          onDoubleClick={refetch}
         >
           <img
             src={currentMeme.url}

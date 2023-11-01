@@ -1,74 +1,66 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
+import { useQuery } from "@tanstack/react-query"
+import axios from "axios"
 import BarLoader from "react-spinners/BarLoader"
 
-function HackerJobs() {
-  const [jobs, setJobs] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState(null) // Introduce error state variable
+async function fetchJobs() {
+  const response = await axios.get(
+    "https://hacker-news.firebaseio.com/v0/jobstories.json"
+  )
+  const jobIds = response.data.slice(0, 10)
+  const jobPromises = jobIds.map(async (jobId) => {
+    const jobResponse = await axios.get(
+      `https://hacker-news.firebaseio.com/v0/item/${jobId}.json`
+    )
+    return jobResponse.data
+  })
 
-  useEffect(() => {
-    // Fetch the latest job listings from the Hacker News API
-    const fetchJobs = async () => {
-      try {
-        const response = await fetch(
-          "https://hacker-news.firebaseio.com/v0/jobstories.json"
-        )
-        const jobIds = await response.json()
-        // Fetch details of the top 10 job listings (you can adjust this number)
-        const topJobs = jobIds.slice(0, 10) // Change the number to get more or fewer jobs
-        const jobPromises = topJobs.map(async (jobId) => {
-          const jobResponse = await fetch(
-            `https://hacker-news.firebaseio.com/v0/item/${jobId}.json`
-          )
-          return await jobResponse.json()
-        })
-        const jobData = await Promise.all(jobPromises)
-        setJobs(jobData)
-        console.log("Hacker News jobs data:", jobData)
-        setIsLoading(false) // Set loading to false after data is fetched
-      } catch (error) {
-        console.error("Error fetching Hacker News jobs data:", error)
-        setError(error.message) // Set error state in case of an error
-        setIsLoading(false) // Set loading to false in case of an error
-      }
-    }
-    fetchJobs()
-  }, [])
+  return Promise.all(jobPromises)
+}
+
+function HackerJobs() {
+  const {
+    data: jobs,
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["jobs"],
+    queryFn: fetchJobs,
+  })
+
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "1.25rem",
+        }}
+      >
+        <BarLoader color="#006D32" />
+      </div>
+    )
+  }
+
+  if (isError) {
+    return <p>Error fetching Hacker News jobs data: {isError.message}</p>
+  }
 
   return (
     <div>
-      {/* Conditional rendering based on loading and error state */}
-      {isLoading ? (
-        <BarLoader
-          color="#006D32"
-          cssOverride={{
-            display: "flex",
-            justifyContent: "center",
-            margin: "auto",
-          }}
-        />
-      ) : error ? (
-        <p>Error: {error}</p>
-      ) : (
-        <ul style={{ padding: "10px" }}>
-          {jobs.map((job, index) => (
-            <li key={index} style={{ marginBottom: "1.25rem" }}>
-              <a href={job.url} target="_blank" rel="noopener noreferrer">
-                {job.title}
-              </a>{" "}
-              by <code>{job.by}</code>
-              <span
-                className="dates"
-                style={{
-                  float: "right",
-                }}
-              >
-                {new Date(job.time * 1000).toLocaleString()}
-              </span>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul style={{ padding: "10px" }}>
+        {jobs.map((job, index) => (
+          <li key={index} style={{ marginBottom: "1.25rem" }}>
+            <a href={job.url} target="_blank" rel="noopener noreferrer">
+              {job.title}
+            </a>{" "}
+            by <code>{job.by}</code>
+            <span className="dates" style={{ float: "right" }}>
+              {new Date(job.time * 1000).toLocaleString()}
+            </span>
+          </li>
+        ))}
+      </ul>
       <footer>
         <p>
           Data from{" "}
