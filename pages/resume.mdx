@@ -1,0 +1,28 @@
+import data from "../data/resume.json"
+
+### Experience `2+ years`
+
+{data.experience.map((exp, index) => (
+
+<li key={index}>
+  <code>
+    <strong>{exp.position}</strong>
+  </code>{" "}
+  @{" "}
+  <a href={exp.company_link} target="_blank" rel="noopener noreferrer">
+    {exp.company}
+  </a>
+  <div className="dates">{exp.dates}</div>
+</li>
+))}
+
+### Honors
+
+{data.honors.map((honor, index) => (
+
+<li key={index}>
+  <code>
+    <strong>{honor.title}</strong>
+  </code>
+</li>
+))}

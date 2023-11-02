@@ -12,7 +12,6 @@ import Banner from "../components/banner.js"
 import GithubCalenderComponent from "../components/github-calender-component.js"
 import LeetcodeStats from "../components/leetcode-stats.js"
 import Sign from "../components/sign.js"
-import data from "../data/resume.json"
 import CalEmbed from "../components/cal-embed.js"
 import TypeAnimationSequence from "../components/type-animation.js"
 
@@ -24,49 +23,12 @@ import TypeAnimationSequence from "../components/type-animation.js"
 
 <TypeAnimationSequence />
 
-I'm Milind, a highly skilled Software Engineer hailing from Dhanbad, India. I bring a wealth of experience in crafting innovative solutions for startups, with a proven track record of success with respect to full-stack engineering. My expertise lies in building robust software that drives business growth.
+I'm Milind, a highly skilled Software Engineer hailing from Dhanbad, India. I bring a wealth of experience in crafting innovative solutions for startups, with a proven track record of success with respect to full-stack engineering.
 
 [**<CalEmbed message="Schedule a Meeting →" />**]()
 
 <GithubCalenderComponent username="thatbeautifuldream" />
 
 <LeetcodeStats username="thatbeautifuldream" />
-
-<details><summary children="Resume"/>
-
-<style jsx>{`
-  summary:not(:focus-visible):focus {
-    outline: none;
-  }
-`}</style>
-
-### Experience `(2+ years)`
-
-{data.experience.map((exp, index) => (
-
-<li key={index}>
-  <code>
-    <strong>{exp.position}</strong>
-  </code>{" "}
-  @{" "}
-  <a href={exp.company_link} target="_blank" rel="noopener noreferrer">
-    {exp.company}
-  </a>
-  <div className="dates">{exp.dates}</div>
-</li>
-))}
-
-### Honors
-
-{data.honors.map((honor, index) => (
-
-<li key={index}>
-  <code>
-    <strong>{honor.title}</strong>
-  </code>
-</li>
-))}
-
-</details>
 
 <Sign />
