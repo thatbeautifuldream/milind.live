@@ -2,7 +2,6 @@ import React from "react"
 import { useQuery } from "@tanstack/react-query"
 import Link from "next/link"
 import BarLoader from "react-spinners/BarLoader"
-import Image from "next/image"
 
 export function BlogFooter() {
   return (
