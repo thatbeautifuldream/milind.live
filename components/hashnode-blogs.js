@@ -1,6 +1,7 @@
 import React from "react"
 import { useQuery } from "@tanstack/react-query"
 import Link from "next/link"
+import Image from "next/image"
 import BarLoader from "react-spinners/BarLoader"
 
 export function BlogFooter() {
@@ -54,8 +55,10 @@ function Insite({ title, coverImage, url, description }) {
   const H3 = "h3"
   return (
     <a className="insite-card block font-semibold" href={url}>
-      <img
+      <Image
         src={coverImage}
+        width={300}
+        height={200}
         alt={title}
         style={{
           borderRadius: "0.25rem",

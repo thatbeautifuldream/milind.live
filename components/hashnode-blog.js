@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query"
 import Link from "next/link"
 import BarLoader from "react-spinners/BarLoader"
 import { BlogFooter } from "./hashnode-blogs"
+import Image from "next/image"
 
 const fetchPost = async (slug) => {
   const query = `
@@ -76,8 +77,10 @@ const BlogPost = ({ slug }) => {
   return (
     <div>
       <Link href="/blogs">← Back to blogs</Link>
-      <img
+      <Image
         src={post?.coverImage.url}
+        width={800}
+        height={400}
         alt={post?.title}
         style={{
           borderRadius: "0.5rem",
