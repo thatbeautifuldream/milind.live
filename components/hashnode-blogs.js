@@ -4,6 +4,26 @@ import Link from "next/link"
 import Image from "next/image"
 import BarLoader from "react-spinners/BarLoader"
 
+function Insite({ title, coverImage, url, description }) {
+  const H3 = "h3"
+  return (
+    <a className="insite-card block font-semibold" href={url}>
+      <Image
+        src={coverImage}
+        width={300}
+        height={200}
+        alt={title}
+        style={{
+          borderRadius: "0.25rem",
+          margin: "0 0 1rem 0", // top right bottom left
+        }}
+      />
+      <H3>{title}</H3>
+      <p>{description}</p>
+    </a>
+  )
+}
+
 export function BlogFooter() {
   return (
     <p>
@@ -33,9 +53,7 @@ const fetchBlogPosts = async () => {
       }
     }
   `
-
   const variables = {}
-
   const response = await fetch("https://gql.hashnode.com", {
     method: "POST",
     headers: {
@@ -46,29 +64,8 @@ const fetchBlogPosts = async () => {
       variables,
     }),
   })
-
   const data = await response.json()
   return data.data.publication.posts.edges
-}
-
-function Insite({ title, coverImage, url, description }) {
-  const H3 = "h3"
-  return (
-    <a className="insite-card block font-semibold" href={url}>
-      <Image
-        src={coverImage}
-        width={300}
-        height={200}
-        alt={title}
-        style={{
-          borderRadius: "0.25rem",
-          margin: "0 0 1rem 0", // top right bottom left
-        }}
-      />
-      <H3>{title}</H3>
-      <p>{description}</p>
-    </a>
-  )
 }
 
 const BlogPosts = () => {
