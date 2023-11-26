@@ -1,5 +1,22 @@
+import prisma from "../db"
 import LoginButton from "../components/auth/login-btn.js"
 
-### Auth Demo
+export default function Guestbook({ posts }) {
+  //   console.log({ posts })
+  return (
+    <>
+      <LoginButton />
+      <p>This is the guestbook page.</p>
+    </>
+  )
+}
 
-<LoginButton />
+export const getServerSideProps = async () => {
+  const posts = await prisma.post.findMany()
+  //   console.log({ posts })
+  return {
+    props: {
+      posts: JSON.parse(JSON.stringify(posts)),
+    },
+  }
+}

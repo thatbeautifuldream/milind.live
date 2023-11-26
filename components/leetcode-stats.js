@@ -37,25 +37,25 @@ function LeetcodeStats({ username }) {
     <table>
       <tbody>
         <tr>
-          <td>Total Solved / Total Questions</td>
+          <td>Total Problems</td>
           <td>
             {data.totalSolved} / {data.totalQuestions}
           </td>
         </tr>
         <tr>
-          <td>Easy Solved / Total Easy</td>
+          <td>Easy Problems</td>
           <td>
             {data.easySolved} / {data.totalEasy}
           </td>
         </tr>
         <tr>
-          <td>Medium Solved / Total Medium</td>
+          <td>Medium Problems</td>
           <td>
             {data.mediumSolved} / {data.totalMedium}
           </td>
         </tr>
         <tr>
-          <td>Hard Solved / Total Hard</td>
+          <td>Hard Problems</td>
           <td>
             {data.hardSolved} / {data.totalHard}
           </td>

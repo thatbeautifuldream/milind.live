@@ -1,7 +1,10 @@
+import YouTube from "react-youtube"
+
 export default function PageNotFound() {
+  const videoId = "cKSpFkMr6Ik"
   return (
-    <div>
-      <h1>Hello 404</h1>
-    </div>
+    <>
+      <YouTube videoId={videoId} />
+    </>
   )
 }
