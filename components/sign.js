@@ -13,13 +13,7 @@ export default function Sign() {
   return (
     <>
       <a title="Milind's Sign" className="sign">
-        <Image
-          src={
-            (theme === "light" && milindsSignLight) ||
-            (theme === "dark" && milindsSignDark)
-          }
-          alt="Milinds Sign"
-        />
+        <Image src={milindsSignDark} alt="Milinds Sign" />
       </a>
     </>
   )
