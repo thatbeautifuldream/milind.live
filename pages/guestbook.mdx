@@ -31,7 +31,7 @@ return ( <div> <LoginButton /> <br />{" "} {status === "authenticated" && ( <div
               float: "right",
             }} > {" "} {post.authorName} {" - "} {moment(post.createdAt).fromNow()} </small>{" "} <br />{" "} </div> ))} </div> ); }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const posts = await prisma.post.findMany()
   posts.reverse()
   return {
