@@ -9,33 +9,22 @@ export default function LoginButton() {
   if (status === "authenticated") {
     return (
       <code>
-        <img
-          src={session?.user?.image}
-          alt="avatar"
-          style={{
-            width: "24px",
-            height: "24px",
-            borderRadius: "50%",
-            float: "right",
-          }}
-        />
-        Signed in as {session?.user?.name} ({session?.user?.email})
-        <br />
+        Signed in as {session?.user?.name}{" "}
         <button
           onClick={() => {
             signOut()
             toast.success("Signed out successfully")
           }}
         >
-          Sign out
+          [Sign out]
         </button>
       </code>
     )
   }
   return (
     <code>
-      You must sign in to leave comments <br />
-      <button onClick={() => signIn()}>Sign in</button>
+      You must sign in to leave comments.{" "}
+      <button onClick={() => signIn()}>[Sign in]</button>
     </code>
   )
 }

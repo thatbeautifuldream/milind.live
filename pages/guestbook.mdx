@@ -1,19 +1,39 @@
-import prisma from "../db"
-import LoginButton from "../components/auth/login-btn.js"
+import { useSession } from "next-auth/react";
+import LoginButton from "../components/auth/login-btn.js";
+import prisma from "../db/index";
+import moment from "moment";
 
 export default function Guestbook({ posts }) {
-  //   console.log({ posts })
-  return (
-    <>
-      <LoginButton />
-      <p>This is the guestbook page.</p>
-    </>
-  )
-}
+  const { data: session, status } = useSession();
+  console.log({ session, posts });
+  // const authorName = session?.user?.name;
+  // const authorEmail = session?.user?.email;
+  // const authorImage = session?.user?.image;
 
-export const getServerSideProps = async () => {
+return ( <div> <LoginButton /> <br />{" "} {status === "authenticated" && ( <div style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginTop: "1rem",
+            marginBottom: "1rem",
+          }} > {" "} <input type="text" placeholder="Add a post" style={{
+              width: "100%",
+              border: "1px solid #ccc",
+              borderRadius: "4px",
+              padding: "0.5rem",
+            }} ></input>{" "} <button style={{
+              marginLeft: "1rem",
+              padding: "0.5rem",
+            }} onClick={() => {}} > {" "} <code style={{
+                padding: "0.5rem",
+                borderRadius: "4px",
+              }} > {" "} Submit{" "} </code>{" "} </button>{" "} </div> )}{" "} {posts.map((post) => ( <div key={post.id}> {" "} <code>{post.comment}</code>{" "} <small style={{
+              float: "right",
+            }} > {" "} {post.authorName} {" - "} {moment(post.createdAt).fromNow()} </small>{" "} <br />{" "} </div> ))} </div> ); }
+
+export async function getStaticProps() {
   const posts = await prisma.post.findMany()
-  //   console.log({ posts })
+  posts.reverse()
   return {
     props: {
       posts: JSON.parse(JSON.stringify(posts)),
