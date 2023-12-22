@@ -1,7 +1,6 @@
-import Link from "next/link"
 import React from "react"
-import Insite from "./insite"
 import projects from "../data/projects.json"
+import Insite from "./insite"
 
 export default function Projects() {
   return (

@@ -1,7 +1,6 @@
-import React from "react"
 import { useQuery } from "@tanstack/react-query"
 import Link from "next/link"
-import Image from "next/image"
+import React from "react"
 import BarLoader from "react-spinners/BarLoader"
 import Insite from "./insite"
 
