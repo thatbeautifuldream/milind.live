@@ -1,0 +1,50 @@
+---
+title: Todos
+description: Daily todos for Milind Mishra
+image: https://milind.live/og/todos.png
+---
+
+import { google } from "googleapis"
+import { GoogleAuth } from "google-auth-library"
+
+export async function getServerSideProps() {
+  const auth = new GoogleAuth({
+    credentials: {
+      client_email: process.env.GOOGLE_CLIENT_EMAIL,
+      private_key: process.env.GOOGLE_PRIVATE_KEY,
+    },
+    scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
+  })
+  const authClient = await auth.getClient()
+  const sheets = google.sheets({ version: "v4", auth: authClient })
+  const { data } = await sheets.spreadsheets.values.get({
+    spreadsheetId: process.env.SHEET_ID,
+    range: "Sheet1!A:C",
+  })
+  const todos = data.values.map((row) => ({
+    title: row[0],
+    content: row[1],
+    postedAt: row[2],
+  }))
+  todos.shift()
+  return {
+    props: {
+      todos,
+    },
+  }
+}
+
+export default function TodoPage({ todos }) {
+  return (
+    <>
+      {todos.length === 0 && <p>No todos found.</p>}
+      {todos.map((todo) => (
+        <div key={todo.title}>
+          <h2>{todo.title}</h2>
+          <code>{todo.content}</code>
+          <p>{todo.postedAt}</p>
+        </div>
+      ))}
+    </>
+  )
+}
