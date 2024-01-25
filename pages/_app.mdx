@@ -15,10 +15,10 @@ export default function Nextra({
   return (
     <QueryClientProvider client={queryClient}>
       <SessionProvider session={session}>
-        <Toaster position="top-center" richColors />
+        <Toaster richColors position="top-center" />
         {getLayout(<Component {...pageProps} />)}
       </SessionProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
-
-) }
+  )
+}
