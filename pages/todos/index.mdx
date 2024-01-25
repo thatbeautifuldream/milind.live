@@ -5,23 +5,23 @@ image: https://milind.live/og/todos.png
 ---
 
 import { google } from "googleapis"
-import { GoogleAuth } from "google-auth-library"
 
 export async function getServerSideProps() {
-  const auth = new GoogleAuth({
+  const auth = await google.auth.getClient({
+    scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
     credentials: {
       client_email: process.env.GOOGLE_CLIENT_EMAIL,
       private_key: process.env.GOOGLE_PRIVATE_KEY,
     },
-    scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
   })
-  const authClient = await auth.getClient()
-  const sheets = google.sheets({ version: "v4", auth: authClient })
-  const { data } = await sheets.spreadsheets.values.get({
+  const sheets = google.sheets({ version: "v4", auth })
+  const range = `Sheet1!A:C`
+  const response = await sheets.spreadsheets.values.get({
     spreadsheetId: process.env.SHEET_ID,
-    range: "Sheet1!A:C",
+    range,
   })
-  const todos = data.values.map((row) => ({
+  const rows = response.data.values
+  const todos = rows.map((row) => ({
     title: row[0],
     content: row[1],
     postedAt: row[2],
@@ -36,7 +36,7 @@ export async function getServerSideProps() {
 
 export default function TodoPage({ todos }) {
   return (
-    <>
+    <div>
       {todos.length === 0 && <p>No todos found.</p>}
       {todos.map((todo) => (
         <div key={todo.title}>
@@ -45,6 +45,6 @@ export default function TodoPage({ todos }) {
           <p>{todo.postedAt}</p>
         </div>
       ))}
-    </>
+    </div>
   )
 }
