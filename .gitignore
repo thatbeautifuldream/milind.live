@@ -4,5 +4,4 @@ node_modules
 .vercel
 .env
 .env.local
-secrets.json
 .env*.local
