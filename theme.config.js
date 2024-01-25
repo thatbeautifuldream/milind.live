@@ -43,12 +43,19 @@ export default {
       >
         <div>
           <a href="https://www.linkedin.com/in/mishramilind/" target="_blank">
-            LinkedIn ↗
+            LinkedIn
           </a>{" "}
           ·{" "}
           <a href="https://github.com/thatbeautifuldream" target="_blank">
-            GitHub ↗
+            GitHub
           </a>{" "}
+          ·{" "}
+          <a
+            href="https://docs.google.com/document/d/1ujYf9MIOEeH3UpaHKZmXm_9-W6XpSQ5LAcLUv0ue32k/preview"
+            target="_blank"
+          >
+            Resume
+          </a>
         </div>
         <Verified />
       </div>
