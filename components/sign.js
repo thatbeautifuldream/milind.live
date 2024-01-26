@@ -8,12 +8,16 @@ import milindsSignLight from "../public/images/sign/milind-sign-light.svg"
 export default function Sign() {
   const { theme, setTheme } = useTheme()
   useEffect(() => {
-    console.log({ theme })
+    // console.log({ theme })
   }, [theme])
   return (
-    <>
+    <div>
       <a title="Milind's Sign" className="sign">
         <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+          {/* to suppress hydration error */}
+          {typeof window === "undefined" && (
+            <Image src={milindsSignDark} alt="Milind's Sign" />
+          )}
           {theme === "dark" && (
             <Image src={milindsSignDark} alt="Milind's Sign" />
           )}
@@ -22,6 +26,6 @@ export default function Sign() {
           )}
         </button>
       </a>
-    </>
+    </div>
   )
 }
