@@ -14,10 +14,11 @@ export default function Sign() {
     <>
       <a title="Milind's Sign" className="sign">
         <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-          {theme === "dark" ? (
-            <Image src={milindsSignDark} alt="Milinds Sign" />
-          ) : (
-            <Image src={milindsSignLight} alt="Milinds Sign" />
+          {theme === "dark" && (
+            <Image src={milindsSignDark} alt="Milind's Sign" />
+          )}
+          {theme === "light" && (
+            <Image src={milindsSignLight} alt="Milind's Sign" />
           )}
         </button>
       </a>
