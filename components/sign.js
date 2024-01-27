@@ -1,9 +1,9 @@
 import Image from "next/image"
 import React from "react"
 import { useEffect } from "react"
-import { useTheme } from "next-themes"
 import milindsSignDark from "../public/images/sign/milind-sign-dark.svg"
 import milindsSignLight from "../public/images/sign/milind-sign-light.svg"
+import { useTheme } from "nextra-theme-blog"
 
 export default function Sign() {
   const { theme, setTheme } = useTheme()

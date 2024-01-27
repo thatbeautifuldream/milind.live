@@ -13,7 +13,6 @@ const TypeAnimationSequence = () => {
         "Building better web experiences ✨",
         2000,
       ]}
-      wrapper="code"
       speed={50}
       style={{
         display: "inline-block",
