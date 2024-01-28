@@ -5,14 +5,12 @@ description: Milind Mishra is a designer and developer.
 image: https://milind.live/og/about.png
 ---
 
-import { useEffect } from "react"
 import Head from "next/head"
 import CalEmbed from "../components/cal-embed.js"
 import TypeAnimationSequence from "../components/type-animation.js"
-import Sign from "../components/sign.js"
 import GithubCalenderComponent from "../components/github-calender-component.js"
-
-{useEffect(() => { console.log(`Hello nerd, check my CV : https://cv.milind.live`) }, [])}
+import Sign from "../components/sign.js"
+import Badge from "../components/badge.js"
 
 <Head>
   <title>Milind Mishra</title>
@@ -26,6 +24,6 @@ I'm Milind, a highly skilled Software Engineer hailing from Dhanbad, India. I br
 
 <GithubCalenderComponent username="thatbeautifuldream" />
 
-Intrested in working with me ? [<CalEmbed message="Book my Calendar ↗" />]()
+Intrested in working with me ? [<Badge text="Whatsapp ↗" />](https://wa.me/919631333128) [<CalEmbed message="Book Calendar ↗" />]()
 
 <Sign />
