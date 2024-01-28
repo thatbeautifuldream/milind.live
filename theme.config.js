@@ -51,7 +51,7 @@ export default {
           </a>{" "}
           ·{" "}
           <a
-            href="https://docs.google.com/document/d/1ujYf9MIOEeH3UpaHKZmXm_9-W6XpSQ5LAcLUv0ue32k/preview"
+            href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1ujYf9MIOEeH3UpaHKZmXm_9-W6XpSQ5LAcLUv0ue32k/export?format=pdf"
             target="_blank"
           >
             Resume
