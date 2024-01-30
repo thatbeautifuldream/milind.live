@@ -6,11 +6,12 @@ image: https://milind.live/og/about.png
 ---
 
 import Head from "next/head"
+import Badge from "../components/badge.js"
 import CalEmbed from "../components/cal-embed.js"
-import TypeAnimationSequence from "../components/type-animation.js"
 import GithubCalenderComponent from "../components/github-calender-component.js"
 import Sign from "../components/sign.js"
-import Badge from "../components/badge.js"
+import TypeAnimationSequence from "../components/type-animation.js"
+import { RoughNotation, RoughNotationGroup } from "react-rough-notation"
 
 <Head>
   <title>Milind Mishra</title>
@@ -18,7 +19,13 @@ import Badge from "../components/badge.js"
 
 # About
 
-I'm Milind, a highly skilled Software Engineer hailing from Dhanbad, India. I bring a wealth of experience in crafting innovative solutions for startups, with a proven track record of success with respect to full-stack engineering.
+<RoughNotationGroup show="true">
+  I'm Milind, a highly skilled
+  <RoughNotation type="box">Software Engineer</RoughNotation>
+  hailing from Dhanbad, India. I bring a wealth of experience in crafting
+  innovative solutions for startups, with a proven track record of success with
+  respect to full-stack engineering.
+</RoughNotationGroup>
 
 <TypeAnimationSequence />
 
