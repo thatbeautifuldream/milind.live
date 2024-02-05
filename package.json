@@ -32,7 +32,7 @@
     "react-github-calendar": "^4.1.1",
     "react-rough-notation": "^1.0.5",
     "react-spinners": "^0.13.8",
-    "react-tweet": "^3.1.1",
+    "react-tweet": "latest",
     "react-type-animation": "^3.2.0",
     "react-use-lanyard": "^0.3.1",
     "react-youtube": "^10.1.0",
