@@ -1,34 +1,28 @@
 {
   "experience": [
     {
-      "position": "Software Engineer",
+      "position": "Lead Software Engineer",
       "company": "Startup Hire",
       "company_link": "#",
-      "dates": "Aug 2023 – Jan 2024"
+      "dates": "[6 Months] Aug 2023 – Jan 2024"
     },
     {
-      "position": "Frontend & DevOps Engineer",
+      "position": "Frontend Engineer",
       "company": "Locus Connect",
       "company_link": "https://locusconnect.com",
-      "dates": "Dec 2022 – July 2023"
+      "dates": "[11 Months] Sept 2022 – July 2023"
     },
     {
-      "position": "Frontend Engineering Intern",
-      "company": "Locus Connect",
-      "company_link": "https://locusconnect.com",
-      "dates": "Sept 2022 – Dec 2022"
-    },
-    {
-      "position": "UX/UI Design Intern",
-      "company": "iNeuron.ai / Physics Wallah",
+      "position": "UX Design Intern",
+      "company": "iNeuron.ai",
       "company_link": "https://ineuron.ai/",
-      "dates": "Apr 2022 – June 2022"
+      "dates": "[3 Months] Apr 2022 – June 2022"
     },
     {
       "position": "Technical Writing Intern",
       "company": "PlusKlass",
       "company_link": "https://www.plusklass.com/",
-      "dates": "Jan 2022 – March 2022"
+      "dates": "[3 Months] Jan 2022 – March 2022"
     }
   ],
   "honors": [
