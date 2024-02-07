@@ -18,6 +18,7 @@ export default function Projects() {
           coverImage={project.coverImage}
           url={project.url}
           description={project.description}
+          tags={project.tags}
           key={index}
         />
       ))}
