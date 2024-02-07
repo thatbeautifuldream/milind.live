@@ -4,13 +4,13 @@ const TypeAnimationSequence = () => {
   return (
     <TypeAnimation
       sequence={[
-        "Building better web applications",
+        "I build better web interfaces",
         1000,
-        "Building better mobile applications",
+        "I build better web services",
         1000,
-        "Building better performing backend systems",
+        "I build better web applications",
         1000,
-        "Building better web experiences ✨",
+        "I build better web experiences ✨",
         2000,
       ]}
       speed={50}
