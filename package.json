@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "build": "GENERATE_SOURCEMAP=false next build",
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
