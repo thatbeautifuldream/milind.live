@@ -3,12 +3,7 @@ import Link from "next/link"
 export default function Insite({ title, coverImage, url, description, tags }) {
   const H3 = "h3"
   return (
-    <Link
-      className="insite-card block font-semibold"
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <Link className="insite-card block font-semibold" href={url}>
       <img
         src={coverImage}
         alt={title}

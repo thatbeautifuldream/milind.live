@@ -2,14 +2,14 @@
   {
     "title": "Locus Connect",
     "coverImage": "./images/projects/locus-connect.png",
-    "url": "https://www.locusconnect.com",
+    "url": "/projects/locus-connect",
     "description": "Locus Connect is a Location as a Service Platform.",
     "tags": ["Next.js", "Tailwind CSS"]
   },
   {
     "title": "100xdocs",
-    "coverImage": "https://100xdocs.com/ogimage.png",
-    "url": "https://www.100xdocs.com",
+    "coverImage": "./images/projects/100xdocs.png",
+    "url": "/projects/100xdocs",
     "description": "100xdocs is a documentation platform for developers.",
     "tags": ["MERN Stack", "T3 Stack"]
   }
