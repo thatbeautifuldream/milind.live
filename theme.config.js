@@ -1,4 +1,5 @@
 import Verified from "./components/verified.js"
+import Footer from "./components/footer.js"
 
 const YEAR = new Date().getFullYear()
 
@@ -33,52 +34,7 @@ export default {
       </>
     )
   },
-  footer: (
-    <div>
-      <hr />
-      <div
-        style={{
-          display: "flex",
-        }}
-      >
-        <div>
-          <a href="https://www.linkedin.com/in/mishramilind/" target="_blank">
-            LinkedIn
-          </a>{" "}
-          ·{" "}
-          <a href="https://github.com/thatbeautifuldream" target="_blank">
-            GitHub
-          </a>{" "}
-          ·{" "}
-          <a
-            href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1ujYf9MIOEeH3UpaHKZmXm_9-W6XpSQ5LAcLUv0ue32k/export?format=pdf"
-            target="_blank"
-          >
-            Resume
-          </a>
-        </div>
-        <Verified />
-      </div>
-
-      <small style={{ display: "block", marginTop: "8rem" }}>
-        <abbr
-          title="This site and all its content are licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
-          style={{ cursor: "help" }}
-        >
-          CC BY-NC 4.0
-        </abbr>{" "}
-        <time>{YEAR}</time> © Milind Mishra.
-        <a href="https://blog.milind.live" target="_blank">
-          Blogs
-        </a>
-        <style jsx>{`
-          a {
-            float: right;
-          }
-        `}</style>
-      </small>
-    </div>
-  ),
+  footer: <Footer />,
   darkMode: true,
   readMore: "Read More →",
 }
