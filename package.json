@@ -17,6 +17,7 @@
     "@tanstack/react-query": "^5.4.3",
     "@tanstack/react-query-devtools": "^5.4.3",
     "axios": "^1.6.2",
+    "cmdk": "^0.2.1",
     "cobe": "^0.6.3",
     "google-auth-library": "^9.4.2",
     "google-spreadsheet": "^4.1.1",
@@ -49,6 +50,7 @@
     "proseWrap": "never"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tanstack/eslint-plugin-query": "^5.0.5",
     "autoprefixer": "^10.4.17",
     "postcss": "^8.4.33",

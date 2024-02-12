@@ -7,6 +7,7 @@ const navigation = {
     { name: "Jobs", href: "/jobs" },
     { name: "News", href: "/news" },
     { name: "Memes", href: "/memes" },
+    { name: "Guestbook", href: "/guestbook" },
   ],
   social: [
     {
