@@ -1,8 +1,7 @@
 import React from "react"
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
-import { SessionProvider } from "next-auth/react"
 import { Toaster } from "sonner"
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import "nextra-theme-blog/style.css"
 import "../styles/main.css"
 
@@ -14,10 +13,8 @@ export default function Nextra({
   const getLayout = Component.getLayout || ((page) => page)
   return (
     <QueryClientProvider client={queryClient}>
-      <SessionProvider session={session}>
-        <Toaster richColors position="top-center" />
-        {getLayout(<Component {...pageProps} />)}
-      </SessionProvider>
+      <Toaster richColors position="top-center" />
+      {getLayout(<Component {...pageProps} />)}
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   )
