@@ -6,3 +6,7 @@ node_modules
 .env.local
 .env*.local
 secrets.json
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

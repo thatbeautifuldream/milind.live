@@ -1,9 +1,9 @@
-import React from "react"
 import { useQuery } from "@tanstack/react-query"
-import Link from "next/link"
-import BarLoader from "react-spinners/BarLoader"
-import { BlogFooter } from "./hashnode-blogs"
 import Image from "next/image"
+import React from "react"
+import BarLoader from "react-spinners/BarLoader"
+import Breadcrumb from "./breadcrumb"
+import { BlogFooter } from "./hashnode-blogs"
 
 const fetchPost = async (slug) => {
   const query = `
@@ -74,9 +74,18 @@ const BlogPost = ({ slug }) => {
     return <div>Error fetching post data</div>
   }
 
+  const pages = [
+    { name: "Blogs", href: "/blogs", current: false },
+    {
+      name: post?.title.substring(0, 20) + "...",
+      href: `/blogs/${post?.slug}`,
+      current: true,
+    },
+  ]
+
   return (
     <div>
-      <Link href="/blogs">← Back to blogs</Link>
+      <Breadcrumb pages={pages} />
       <Image
         src={post?.coverImage.url}
         width={800}
