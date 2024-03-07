@@ -251,6 +251,20 @@ a.insite-card p {
   margin: 0.25rem 0 0;
 }
 
+.insite-card {
+  padding: 12px 24px;
+  borderradius: 7px;
+  transition: transform 250ms cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.insite-card:hover {
+  transform: scale(1.01);
+}
+
+.insite-card:active {
+  transform: scale(0.9);
+}
+
 @media screen and (max-width: 480px) {
   a.insite-card {
     flex: 1 0 100%;

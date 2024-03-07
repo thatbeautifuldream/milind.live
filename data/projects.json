@@ -1,10 +1,31 @@
 [
   {
+    "title": "Startup Hire",
+    "coverImage": "./images/projects/locus-connect.png",
+    "url": "/projects/startuphire",
+    "description": "Find your next job using AI.",
+    "tags": ["Next.js", "Tailwind CSS", "Kysely", "MySQL"]
+  },
+  {
     "title": "Locus Connect",
     "coverImage": "./images/projects/locus-connect.png",
     "url": "/projects/locus-connect",
     "description": "Locus Connect is a Location as a Service Platform.",
     "tags": ["Next.js", "Tailwind CSS"]
+  },
+  {
+    "title": "iNeuron.ai / PhysicsWallah",
+    "coverImage": "./images/projects/locus-connect.png",
+    "url": "/projects/ineuron-ai",
+    "description": "Collab or hire coders with no middleman.",
+    "tags": ["Figma", "Next.js", "Tailwind CSS"]
+  },
+  {
+    "title": "PlusKlass",
+    "coverImage": "./images/projects/locus-connect.png",
+    "url": "/projects/plusklass",
+    "description": "All-in-one interview prepration platform.",
+    "tags": ["React", "MDX", "Tailwind CSS"]
   },
   {
     "title": "100xdocs",

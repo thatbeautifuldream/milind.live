@@ -13,6 +13,7 @@ import Sign from "../components/sign.js"
 import TypeAnimationSequence from "../components/type-animation.js"
 import WhatsappBadge from "../components/whatsapp-badge.js"
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation"
+import skills from "../data/skills.json"
 
 <Head>
   <title>Milind Mishra</title>
@@ -25,8 +26,13 @@ import { RoughNotation, RoughNotationGroup } from "react-rough-notation"
   proficient in solving varied challenges across industries. I specialize in
   crafting comprehensive solutions tailored to specific needs.
 </RoughNotationGroup>
-
 <TypeAnimationSequence />
+
+<div className="flex gap-x-2 py-2">
+  {skills.data.map((skill) => (
+    <Badge text={skill.name} />
+  ))}
+</div>
 
 <GithubCalenderComponent username="thatbeautifuldream" />
 

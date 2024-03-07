@@ -15,7 +15,7 @@ export default function CalEmbed({ message }) {
 
   return (
     <>
-      <span className="inline-flex items-center rounded-md bg-yellow-50 dark:bg-yellow-400/10 px-2 py-1 text-xs font-medium text-yellow-800 dark:text-yellow-400 ring-1 ring-inset ring-yellow-600/20 dark:ring-yellow-400/20">
+      <span className="animate-pulse inline-flex items-center rounded-md bg-yellow-50 dark:bg-yellow-400/10 px-2 py-1 text-xs font-medium text-yellow-800 dark:text-yellow-400 ring-1 ring-inset ring-yellow-600/20 dark:ring-yellow-400/20">
         <button
           data-cal-link="milind/30min"
           onClick={() => setTheme(theme === "dark" ? "dark" : "light")}
