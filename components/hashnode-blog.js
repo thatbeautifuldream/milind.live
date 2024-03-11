@@ -4,6 +4,7 @@ import React from "react"
 import BarLoader from "react-spinners/BarLoader"
 import Breadcrumb from "./breadcrumb"
 import { BlogFooter } from "./hashnode-blogs"
+import Giscus from "@giscus/react"
 
 const fetchPost = async (slug) => {
   const query = `
@@ -98,6 +99,22 @@ const BlogPost = ({ slug }) => {
       <h1>{post?.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: post?.content.html }} />
       <BlogFooter />
+      <Giscus
+        src="https://giscus.app/client.js"
+        repo="thatbeautifuldream/discuss"
+        repoId="R_kgDOLe3btA"
+        category="blogs"
+        categoryId="DIC_kwDOLe3btM4Cd5YL"
+        mapping="pathname"
+        strict="0"
+        reactionsEnabled="1"
+        emitMetadata="0"
+        inputPosition="bottom"
+        theme="dark"
+        lang="en"
+        crossorigin="anonymous"
+        async
+      />
     </div>
   )
 }

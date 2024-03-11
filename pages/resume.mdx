@@ -7,6 +7,7 @@ image: https://milind.live/og/about.png
 
 import ResumeBox from "../components/resume-box.js"
 import data from "../data/resume.json"
+import Giscus from "@giscus/react"
 
 ### Skills
 
@@ -49,3 +50,23 @@ import data from "../data/resume.json"
 ### Resume
 
 <ResumeBox />
+
+<div className="mt-4">
+  <h2>Testimonials</h2>
+  <Giscus
+    src="https://giscus.app/client.js"
+    repo="thatbeautifuldream/discuss"
+    repoId="R_kgDOLe3btA"
+    category="testimonials"
+    categoryId="DIC_kwDOLe3btM4Cd5Za"
+    mapping="pathname"
+    strict="0"
+    reactionsEnabled="0"
+    emitMetadata="0"
+    inputPosition="top"
+    theme="dark"
+    lang="en"
+    crossorigin="anonymous"
+    async
+  />
+</div>
