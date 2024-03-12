@@ -9,12 +9,6 @@ import ResumeBox from "../components/resume-box.js"
 import data from "../data/resume.json"
 import Giscus from "@giscus/react"
 
-### Skills
-
-- Previous role was `Fullstack [Frontend Heavy]`
-- Main skills are `HTML` `JavaScript` `MongoDB` `Next.js` `React.js` `Redux` `TypeScript` `UX Design` `AWS`
-- Languages known are `English` `Hindi`
-
 ### Experience
 
 {data.experience.map((exp, index) => (
@@ -54,7 +48,6 @@ import Giscus from "@giscus/react"
 <div className="mt-4">
   <h2>Testimonials</h2>
   <Giscus
-    src="https://giscus.app/client.js"
     repo="thatbeautifuldream/discuss"
     repoId="R_kgDOLe3btA"
     category="testimonials"
@@ -64,7 +57,7 @@ import Giscus from "@giscus/react"
     reactionsEnabled="0"
     emitMetadata="0"
     inputPosition="top"
-    theme="transparent_dark"
+    theme="dark"
     lang="en"
     crossorigin="anonymous"
     async

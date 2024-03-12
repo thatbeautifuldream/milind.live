@@ -100,7 +100,6 @@ const BlogPost = ({ slug }) => {
       <div dangerouslySetInnerHTML={{ __html: post?.content.html }} />
       <BlogFooter />
       <Giscus
-        src="https://giscus.app/client.js"
         repo="thatbeautifuldream/discuss"
         repoId="R_kgDOLe3btA"
         category="blogs"
@@ -110,7 +109,7 @@ const BlogPost = ({ slug }) => {
         reactionsEnabled="1"
         emitMetadata="0"
         inputPosition="bottom"
-        theme="transparent_dark"
+        theme="light"
         lang="en"
         crossorigin="anonymous"
         async
